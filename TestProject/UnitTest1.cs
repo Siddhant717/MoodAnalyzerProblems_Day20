@@ -12,21 +12,21 @@ namespace TestProject
         }
 
         [Test]
-        public void GivenNullShouldReturnNullException()
+        public void GivenEmptyShouldReturnEmptyException()
         {
-            string expected = "Mood should not be null";
+            string expected = "Message should not be empty";
             MoodAnalyse moodAnalyser = new MoodAnalyse(null);
             try
             {
                 //ACT
                 string actual = moodAnalyser.AnalyseMood();
             }
-            catch (CustomMoodAnalyzerException e)
+            catch (CustomMoodAnalyzerException ex)
             {
                 //ASSERT
-                Assert.AreEqual(expected, e.Message);
+                Assert.AreEqual(expected, ex.Message);
             }
-
+        
         }
         
         
