@@ -12,7 +12,7 @@ namespace MoodAnalyzerProblem
         //Creating types of Exception may arise
         public enum ExceptionType
         {
-            Empty_Message, Null_Message
+            Empty_Message, Null_Message, NO_SUCH_CLASS, NO_SUCH_METHOD
         }
         private readonly ExceptionType type;
 

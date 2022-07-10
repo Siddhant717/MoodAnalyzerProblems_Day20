@@ -6,10 +6,10 @@ namespace MoodAnalyzerProblem
     {
         static void Main(string[] args)
         {
-            MoodAnalyse moodanalyse = new MoodAnalyse(" ");
-            string checkmood= moodanalyse.AnalyseMood();
-            Console.WriteLine(checkmood);
-           
+            MoodAnalyserFactory moodAnalyserFactory = new MoodAnalyserFactory();
+
+            MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyse", "MoodAnalyse");
+
         }
     }
 }
