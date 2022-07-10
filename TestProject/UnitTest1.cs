@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using MoodAnalyzerProblem;
 
+
 namespace TestProject
 {
     public class Tests
@@ -11,17 +12,26 @@ namespace TestProject
         }
 
         [Test]
-        public void CheckMood_returnHappy()
+        public void HandleException()
         {
 
-            //Arrange
-            MoodAnalyse moodAnalyse = new MoodAnalyse("I am in Happy Mood");
 
-            //Act
-            string checkmood = moodAnalyse.AnalyseMood();
+            try
+            {
+                //Arrange
+                MoodAnalyse moodAnalyse = new MoodAnalyse(null);
 
-            //Assert
-            Assert.AreEqual("HAPPY", checkmood);
+                //Act
+                string checkmood = moodAnalyse.AnalyseMood();
+
+                
+
+            }
+            catch (MoodNullException e)
+            {
+                //Assert
+                Assert.AreEqual("Exception:" ,e.Message);
+            }
         }
     }
 }

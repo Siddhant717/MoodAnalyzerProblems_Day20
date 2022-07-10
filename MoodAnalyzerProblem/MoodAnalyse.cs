@@ -21,14 +21,27 @@ namespace MoodAnalyzerProblem
         //Creating method for Analysing the mood
         public string AnalyseMood()
         {
-            if (message.Contains("Sad"))
+            try
             {
-                return "SAD";
+                if (this.message == null)
+                {
+                    throw new MoodNullException("Mood cant be null");
+                }
+                if (this.message.Contains("Sad"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
+
             }
-            else
+            catch(MoodNullException e)
             {
-                return "HAPPY";
+                Console.WriteLine("Exception:" + e.Message);
             }
+            return message;
         }
     }
 }
