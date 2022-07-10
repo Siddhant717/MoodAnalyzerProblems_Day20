@@ -10,7 +10,7 @@ namespace MoodAnalyzerProblem
 {
     public class MoodAnalyserFactory
     {
-        public static object CreateMoodAnalyser(string className, string constructorName)
+        public object CreateMoodAnalyser(string className, string constructorName)
         {
             string pattern = @"^" + constructorName + "$";
             Match result = Regex.Match(className, pattern);
@@ -35,15 +35,15 @@ namespace MoodAnalyzerProblem
             }
 
         }
-        public static object CreateMoodAnalyserUsingParametrisedConstructor(string className, string ConstructorName, string message)
+        public  object CreateMoodAnalyserUsingParametrisedConstructor(string className, string ConstructorName, string message)
         {
             Type type = typeof(MoodAnalyse);
             if (type.Name.Equals(className) || type.FullName.Equals(className))
             {
                 if (type.Name.Equals(ConstructorName))
                 {
-                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
-                    object instance = ctor.Invoke(new object[] { message });
+                    ConstructorInfo construct = type.GetConstructor(new[] { typeof(string) });
+                    object instance = construct.Invoke(new object[] { message });
                     return instance;
                 }
                 else
