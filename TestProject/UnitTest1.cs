@@ -12,20 +12,20 @@ namespace TestProject
         }
 
         [Test]
-        public void TestMoodAnalyse()
+        public void GivenClassName_ThrowException()
         {
 
 
-            string message = null;
-
-            object expected = new MoodAnalyse(message);
-
-
-            object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyse", "MoodAnalyse");
-            expected.Equals(obj);
-
-
-
+            string expected = "Class Not Found";
+            try
+            {
+                object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyse", "MoodAnalyse");
+            }
+            catch (CustomMoodAnalyzerException exception)
+            {
+                Assert.AreEqual(expected, exception.Message);
+            }
+        
         }
     }
 }
