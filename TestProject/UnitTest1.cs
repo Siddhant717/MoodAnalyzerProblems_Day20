@@ -12,7 +12,7 @@ namespace TestProject
         }
 
         [Test]
-        public void CheckObjWithDefaultConstructor()
+        public void Test()
         {
 
 

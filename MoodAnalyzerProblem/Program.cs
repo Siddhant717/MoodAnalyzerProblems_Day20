@@ -8,7 +8,7 @@ namespace MoodAnalyzerProblem
         {
             MoodAnalyserFactory moodanalysefactory = new MoodAnalyserFactory();
 
-            moodanalysefactory.CreateMoodAnalyserUsingParametrisedConstructor("MoodAnalyse", "MoodAnalyse", "Happy");
+            moodanalysefactory.CreateMoodAnalyserUsingParametrisedConstructor("MoodAnalyse", "MoodAnalyse", "Sad");
 
         }
     }
